@@ -1,0 +1,818 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "4b2a59c4-2d69-468d-8444-550128d22c83",
+   "metadata": {},
+   "source": [
+    "# 1. 파이썬 함수"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "672e1ad4-77ed-4bc8-9d47-7c780e1e2085",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "7\n",
+      "333\n"
+     ]
+    }
+   ],
+   "source": [
+    "# 함수도 의미있게 이름을 지어줘야 나중에 뭔지 알수있다.\n",
+    "def add(a,b):\n",
+    "    return a+b\n",
+    "\n",
+    "\n",
+    "a,b=3,4\n",
+    "c=add(a,b)\n",
+    "print(c)\n",
+    "\n",
+    "\n",
+    "d=add(111,222)\n",
+    "print(d)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "2c15c85e-3e71-4040-b611-63544bca6568",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "7\n"
+     ]
+    }
+   ],
+   "source": [
+    "def add(a,b):\n",
+    "    return a+b\n",
+    "\n",
+    "print(add(3,4))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "ef3e5324-c945-4640-8983-8d3feb7c2374",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "246"
+      ]
+     },
+     "execution_count": 6,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "add(123,123)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "5e901ec5-7964-4d6d-a72a-519b9aae9f32",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "24364866132011"
+      ]
+     },
+     "execution_count": 7,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "add(38383483747,24326482648264)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "b2c4011b-ed00-4bb4-a736-ee9283ec303d",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def add(a,b):\n",
+    "       print(a)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "id": "8835a851-92e3-4466-a6ca-a0832bd2ba6c",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "3,4의 합은 7입니다.\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(\"%d,%d의 합은 %d입니다.\"\n",
+    "%(a,b,a+b))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "9dfcc9ce-c5dc-4654-89b3-48c4f0de8742",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def say():\n",
+    "    print('Hi')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "8fe7db82-56c1-44d8-90f1-6be840ec2eb4",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Hi\n"
+     ]
+    }
+   ],
+   "source": [
+    "say()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "id": "39cc7c8d-98f8-4ac7-a7cc-f1c09f3e3e8d",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "4\n"
+     ]
+    }
+   ],
+   "source": [
+    "def sub(a,b):\n",
+    "    return a-b\n",
+    "    \n",
+    "result=sub(a=7,b=3)\n",
+    "print(result)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "id": "a10b75b5-b5ff-4809-bf92-a1607badb638",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "4\n"
+     ]
+    }
+   ],
+   "source": [
+    "result=sub(b=3,a=7)\n",
+    "print(result)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "id": "964f2d86-6992-4981-bc84-f43e1e7ad38c",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def add_many(*args):\n",
+    "    result=0\n",
+    "    for i in args:\n",
+    "        result=result+i\n",
+    "    return result\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "id": "b67cdec2-01f9-49d2-8acc-609a9747c6a9",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "6\n"
+     ]
+    }
+   ],
+   "source": [
+    "result=add_many(1,2,3)\n",
+    "print(result)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 24,
+   "id": "ee6f44a4-3a07-490c-82ab-5ae64ea0b12d",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "55\n"
+     ]
+    }
+   ],
+   "source": [
+    "result=add_many(1,2,3,4,5,6,7,8,9,10)\n",
+    "print(result)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 30,
+   "id": "75c547df-3bd7-4da3-9e5f-00c93d400c45",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "15\n"
+     ]
+    }
+   ],
+   "source": [
+    "def add_mul(choice,*args):\n",
+    "    if choice==\"add\":\n",
+    "        result=0\n",
+    "        for i in args:\n",
+    "            result=result+i\n",
+    "        return result\n",
+    "    elif choice==\"mul\":\n",
+    "        result=1\n",
+    "        for i in args:\n",
+    "            result=result*i\n",
+    "        return result\n",
+    "\n",
+    "result=add_mul('add',1,2,3,4,5)\n",
+    "print(result)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 31,
+   "id": "a5c19b9b-edb1-48e0-ba76-b8225a094cad",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "120\n"
+     ]
+    }
+   ],
+   "source": [
+    "result=add_mul('mul', 1,2,3,4,5)\n",
+    "print(result)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 33,
+   "id": "634e862d-937e-42cb-9156-43454447917b",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{'a': 1}\n",
+      "{'name': 'foo', 'age': 3}\n"
+     ]
+    }
+   ],
+   "source": [
+    "# 키워드 가변 매개변수 (**매개변수)\n",
+    "\n",
+    "def print_kwargs(**kwargs):\n",
+    "    print(kwargs)\n",
+    "\n",
+    "print_kwargs(a=1)\n",
+    "\n",
+    "print_kwargs(name='foo', age=3)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 35,
+   "id": "b0e6026a-2a12-40d7-9737-0bf89d7251f9",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "(7, 12)\n",
+      "a+b= 7\n",
+      "a*b= 12\n"
+     ]
+    }
+   ],
+   "source": [
+    "# 함수의 리턴값은 하나!!\n",
+    "\n",
+    "def add_and_mul(a,b):\n",
+    "    return a+b, a*b\n",
+    "\n",
+    "res=add_and_mul(3,4)\n",
+    "print(res)\n",
+    "\n",
+    "res1, res2=add_and_mul(3,4)\n",
+    "print(\"a+b=\", res1)\n",
+    "print(\"a*b=\", res2)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 36,
+   "id": "8387b8c4-a8fd-4043-ad7b-2d350af9dfeb",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "5\n"
+     ]
+    }
+   ],
+   "source": [
+    "def add_and_mul(a,b):\n",
+    "    return a+b\n",
+    "    return a*b\n",
+    "\n",
+    "result=add_and_mul(2,3)\n",
+    "print(result)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 37,
+   "id": "6d340970-2f34-4d87-a13f-75f8b43327bc",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "나의 별명은 야호 입니다.\n"
+     ]
+    }
+   ],
+   "source": [
+    "\n",
+    "# return 의 또 다른 쓰임새 = 강제종료\n",
+    "\n",
+    "\n",
+    "def say_nick(nick):\n",
+    "    if nick==\"바보\":\n",
+    "        return\n",
+    "    print(\"나의 별명은 %s 입니다.\" %nick)\n",
+    "\n",
+    "say_nick('야호')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 38,
+   "id": "899ac53e-612a-4946-ba4a-cc18568eec52",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "say_nick('바보')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 39,
+   "id": "524bb828-aa7c-457d-97a4-10ca85d17621",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 46,
+   "id": "b1602afb-ade1-4907-9628-e399d9b21ad5",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "나의 이름은 장우성입니다.\n",
+      "나이는 41살 입니다.\n",
+      "남자입니다.\n",
+      "나의 이름은 장우성입니다.\n",
+      "나이는 41살 입니다.\n",
+      "여자입니다.\n"
+     ]
+    }
+   ],
+   "source": [
+    "# 매개변수에 초기값 설정\n",
+    "\n",
+    "def say_myself(name,age,man=True):\n",
+    "    print(f\"나의 이름은 {name}입니다.\")\n",
+    "    print(f\"나이는 {age}살 입니다.\")\n",
+    "    if man:\n",
+    "        print(\"남자입니다.\")\n",
+    "    else:\n",
+    "        print(\"여자입니다.\")\n",
+    "\n",
+    "# 함수 호출\n",
+    "\n",
+    "say_myself('장우성', 41)\n",
+    "say_myself('장우성', 41, False)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 47,
+   "id": "46ee95da-1ad3-46b1-8b14-7450416b3f54",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "나의 이름은 장우성입니다.\n",
+      "나이는 41살 입니다.\n",
+      "남자입니다.\n",
+      "나의 이름은 장우성입니다.\n",
+      "나이는 41살 입니다.\n",
+      "여자입니다.\n"
+     ]
+    }
+   ],
+   "source": [
+    "def say_myself(name, age, man=True):  # 함수명 수정\n",
+    "    print(f\"나의 이름은 {name}입니다.\")\n",
+    "    print(f\"나이는 {age}살 입니다.\")\n",
+    "    if man:\n",
+    "        print(\"남자입니다.\")\n",
+    "    else:  # else 추가\n",
+    "        print(\"여자입니다.\")\n",
+    "\n",
+    "# 함수 호출\n",
+    "say_myself('장우성', 41)        # man=True (기본값)\n",
+    "say_myself('장우성', 41, False)  # man=False"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 49,
+   "id": "36be2d78-4974-4a74-8c46-2fdc9878d543",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "나의 이름은 장우성입니다.\n",
+      "나이는 41살 입니다.\n",
+      "남자입니다.\n",
+      "나의 이름은 장우성입니다.\n",
+      "나이는 41살 입니다.\n",
+      "여자입니다.\n"
+     ]
+    }
+   ],
+   "source": [
+    "def say_myself(name, age, gender='남'):\n",
+    "    print(f\"나의 이름은 {name}입니다.\")\n",
+    "    print(f\"나이는 {age}살 입니다.\")\n",
+    "    print(f\"{gender}자입니다.\")\n",
+    "\n",
+    "say_myself('장우성', 41)      \n",
+    "# 남자 (기본값)\n",
+    "say_myself('장우성', 41, '여')   # 여자"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "64ceefaf-51ab-468a-9338-f9f6a7272254",
+   "metadata": {},
+   "source": [
+    "# 함수의 유효범위"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 63,
+   "id": "a6368b0b-3773-4754-8418-265440a576c5",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "2\n"
+     ]
+    }
+   ],
+   "source": [
+    "a=1\n",
+    "def vartest(x):\n",
+    "    x=x+1\n",
+    "    return x\n",
+    "    \n",
+    "\n",
+    "a=vartest(a) #함수 실행하면 a 값 반환되고 a 변수에 덮어씀.\n",
+    "print(a)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 64,
+   "id": "8ac7060e-8628-4776-b3d7-85c4fda3a22d",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "2\n"
+     ]
+    }
+   ],
+   "source": [
+    "a = 1\n",
+    "def vartest(value):\n",
+    "    global a  # 전역변수 a를 사용하겠다고 선언\n",
+    "    a = a + 1\n",
+    "\n",
+    "vartest(a)\n",
+    "print(a)  # 2\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 66,
+   "id": "9a3f82bb-ccb5-4719-8a55-93f125bf5b72",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "7\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Lanbda 표현식(예약어) 사용하여 표현\n",
+    "\n",
+    "add=lambda a,b : a+b\n",
+    "print(add(3,4))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d82042d8-e256-43d3-a635-53e9473d0de3",
+   "metadata": {},
+   "source": [
+    "# 함수의 활용\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1802c5fa-de0c-4106-8c84-e6092618ac5d",
+   "metadata": {},
+   "source": [
+    "### 1) 재귀 함수 : 내가 만든 함수를 다시 호출하는 것"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "3267f3c1-a5d4-42e1-bc9d-e51590649c37",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "5!= 120\n"
+     ]
+    }
+   ],
+   "source": [
+    "# 반복문으로 팩토리얼 구하기\n",
+    "\n",
+    "def factorial(n):\n",
+    "    output = 1\n",
+    "    for i in range(1, n+1):\n",
+    "        output *= i\n",
+    "        \n",
+    "    return output\n",
+    "\n",
+    "print('5!=', factorial(5))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "20d0bd42-028c-4e74-b6d7-253487e2daa8",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "5!= 120\n"
+     ]
+    }
+   ],
+   "source": [
+    "def factorial(n):\n",
+    "    output = 1\n",
+    "    for i in range(1, n+1):\n",
+    "        output *= i\n",
+    "    return output\n",
+    "\n",
+    "print('5!=', factorial(5))\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "7bb2b3a2-fc55-49a3-9fba-506a83e07929",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "1! : 1\n"
+     ]
+    }
+   ],
+   "source": [
+    "def factorial(n):\n",
+    "    if n==0:\n",
+    "        return 1\n",
+    "    else:\n",
+    "        return n * factorial(n-1)\n",
+    "\n",
+    "print('1! :', factorial(1))\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "81d97537-13ff-4c49-92ca-ea6d87dff04f",
+   "metadata": {},
+   "source": [
+    "# 머신러닝, 딥러닝 할때 쓰는  \"리스트 평탕화 하는 재귀 함수 만들기\"\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "b77c6f4e-e1f2-4c01-8db0-aab7eeac067e",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "원본 :  [[1, 2, 3], [4, 5, 6], 7, [8, 9]]\n",
+      "변환 :  [1, 2, 3, 4, 5, 6, 7, 8, 9]\n"
+     ]
+    }
+   ],
+   "source": [
+    "def flatten(data):\n",
+    "    output = []\n",
+    "    for item in data:\n",
+    "        if type(item) == list:\n",
+    "            output += item\n",
+    "        else:\n",
+    "            output.append(item)\n",
+    "\n",
+    "    return output\n",
+    "\n",
+    "example = [[1,2,3],[4,5,6],7,[8,9]]\n",
+    "print('원본 : ', example)\n",
+    "print('변환 : ', flatten(example))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "id": "7dab6931-b7f9-4ae1-8230-b6766b6e6595",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# 재귀 함수로 리스트 평탄화"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "id": "f4183649-6f6d-4fde-bad4-b7c8b6f12801",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "원본 :  [[1, 2, 3], [4, [5, 6]], 7, [8, 9]]\n",
+      "변환 :  [1, 2, 3, 4, 5, 6, 7, 8, 9]\n"
+     ]
+    }
+   ],
+   "source": [
+    "def flatten(data):\n",
+    "    output = []\n",
+    "    for item in data:\n",
+    "        if type(item) == list:\n",
+    "            output += flatten(item)\n",
+    "        else:\n",
+    "            output.append(item)\n",
+    "\n",
+    "    return output\n",
+    "\n",
+    "\n",
+    "example = [[1,2,3],[4,[5,6]],7,[8,9]]\n",
+    "print('원본 : ', example)\n",
+    "print('변환 : ', flatten(example))\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "066d8f20-83ea-4588-bd47-7f97725e265c",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python [conda env:base] *",
+   "language": "python",
+   "name": "conda-base-py"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.13.5"
+  },
+  "widgets": {
+   "application/vnd.jupyter.widget-state+json": {
+    "state": {},
+    "version_major": 2,
+    "version_minor": 0
+   }
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
